@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+
+  backend:
+    init: true
+    build: .
+    image: hello-flask
+    ports:
+      - "22:22"
+      - "8000:8000"
+    environment:
+      - ENABLE_SSH=true
+      - AUTHORIZED_KEYS={public-key-content}
